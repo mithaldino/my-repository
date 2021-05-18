@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+{% include 'iphoneapp/header.html' %}
+
+
+<form action='placeorder' method='POST' align="center">
+{% csrf_token %}
+<center><caption>Cart</caption></center>
+<table border="1" align='center'>
+
+<tr>
+<th>Cart ID</th>
+<th>Email ID</th>
+<th>Item ID</th>
+<th>Item Name</th>
+<th>Item Price</th>
+<th>Item Quantity</th>
+<th>Total Price</th>
+<th colspan='2'>Action</th>
+</tr>
+
+{%for carts in mycart%}
+
+<tr>
+<td>{{carts.cartid}}</td>
+<td>{{carts.custemailid}}</td>
+<td>{{carts.storeid}}</td>
+<td>{{carts.name}}</td>
+<td>{{carts.price}}</td>
+<td>{{carts.quantity}}</td>
+<td>{{carts.totalprice}}</td>
+<td><a href="deletecart_1/{{carts.cartid}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+<br>
+<input type='submit' value='Place Order'>
+</form>
+<br>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

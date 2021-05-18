@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Order List</title>
+<body>
+{% include 'iphoneapp/header.html' %}
+<div align="center">
+{% csrf_token %}
+<h1>Order Placed Successfully</h1>
+<h1>Previous Orders</h1>
+<table border='5' style="font-size:medium; font-weight:bold, color:purple, width:95%">
+<tr style='color : red'>
+<th>Order ID</th>
+<th>Order Date</th>
+<th>Order Bill</th>
+<th>Email ID</th>
+</tr>
+{% for o in orders %}
+<tr>
+<td>{{o.orderid}}</td>
+<td>{{o.orderdate}}</td>
+<td>{{o.totalbill}}</td>
+<td>{{o.custemailid}}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+<br>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

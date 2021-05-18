@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Cart</title>
+<body>
+{% include 'iphoneapp/header.html' %}
+
+<form action="addtocarttable" method="POST">
+{% csrf_token %}
+<div align="center">
+<h1><caption>Cart</caption></h1>
+<table>
+
+<tr>
+<td>Item ID:</td>
+<td><input type="text" name="storeid" readonly value='{{e.storeid}}'></td>
+<td><span id="nameerror" style="color:red"></span></td>
+</tr>
+
+<tr>
+<td>Item Name:</td>
+<td><input type="text" name="name" readonly value='{{e.name}}'></td>
+<td><span id="nameerror" style="color:red"></span></td>
+</tr>
+
+<tr>
+<td>Item Price:</td>
+<td><input type="number" name="price" readonly value='{{e.price}}'></td>
+<td><span id="nameerror" style="color:red"></span></td>
+</tr>
+
+<tr>
+<td>Item Quantity:</td>
+<td><input type="number" name="quantity"></td>
+<td><span id="nameerror" style="color:red"></span></td>
+</tr>
+
+<tr>
+<td>Contact Number:</td>
+<td><input type="text" name="contact"></td>
+</tr>
+
+<tr>
+<td>Shipping Address:</td>
+<td><textarea rows="4" cols="50" name="address"></textarea></td>
+</tr>
+
+</table>
+<br>
+<input type = "submit" value = "Add to Cart">
+<input type = "reset" value = "cancel">
+
+</form>
+</div>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

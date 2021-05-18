@@ -1,0 +1,52 @@
+<html>
+<head>
+</head>
+<body>
+{% include 'iphoneapp/header.html' %}
+
+<div align='center'>
+<h1><caption>Store List</caption></h1>
+<table border="1">
+
+<tr>
+<th>Item ID</th>
+<th>Item Category</th>
+<th>Item Name</th>
+<th>Item Price</th>
+<th>Item Image</th>
+{% if request.session.custemail is None and request.session.adminemailid is not None %}<!--Admin Login-->
+<th colspan='2'>Action</th>
+{% endif %}
+{% if request.session.custemail is not None and request.session.adminemailid is None %}
+<th>Action</th>
+
+</tr>
+{% endif %}
+{% for e in sto %}
+
+
+<tr>
+<td>{{e.storeid}}</td>
+<td>{{e.category}}</td>
+<td>{{e.name}}</td>
+<td>{{e.price}}</td>
+<td><a href="getimageview/{{e.storeid}}"><img src="{{ e.imagefile.url }}" width="50" height="50"/></a></td>
+{% if request.session.custemail is None and request.session.adminemailid is not None %}<!--Admin Login-->
+<td><a href="getstoreitem/{{e.storeid}}">Update</a></td>
+<td><a href="deletestore/{{e.storeid}}">Delete</a></td>
+{% endif %}	
+{% if request.session.custemail is not None and request.session.adminemailid is None %}
+<td><a href="addtocartform/{{e.storeid}}">Add to Cart</a></td>
+
+</tr>
+{% endif %}
+
+{% endfor %}
+
+</table>
+
+<br>
+</div>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

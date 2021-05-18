@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+{% load static %}
+{% include 'iphoneapp/header.html' %}
+<!-- about  -->
+<div id="about" class="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="about-box">
+          <h2>About us</h2>
+          <p>With great power comes great productivity. Apple hardware, software and services work together to deliver a seamless experience that just works. You can start a project on Mac and finish it on iPad, use your screens side by side to extend your workspace, and even draw with Apple Pencil on your iPad or use your iPhone to make live updates on your Mac. And it’s all compatible with apps from Microsoft and Google, so your team has everything it needs to get any job done.</p>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+        <div class="about-box_img">
+          <figure><img src="{% static 'images/about.jpg' %}" alt="#" /></figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- end abouts -->
+
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

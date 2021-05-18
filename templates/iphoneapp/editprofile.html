@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Edit Profile</title>
+<body>
+{% include 'iphoneapp/header.html' %}
+
+<form action="updatecust/{{e.custemail}}" method="POST" align="center">
+{% csrf_token %}
+<h1><caption>Edit Profile</caption></h1>
+<table align="center">
+
+<tr>
+<td>Customer Name:</td>
+<td><input type="text" id="cname" name="custname" value='{{e.custname}}'></td>
+<td><span id="nameerror" style="color:red"></span></td>
+</tr>
+
+<tr>
+<td>Customer Email:</td>
+<td><input type="text" id="cemail" name="custemail" value='{{e.custemail}}'></td>
+<td><span id="emailerror" style="color:red"></span></td>
+</tr>
+
+
+<tr>
+<td>Customer Contact:</td>
+<td><input type="text" id="ccontact" name="custcontact" value='{{e.custcontact}}'></td>
+<td><span id="contacterror" style="color:red"></span></td>
+</tr>
+
+</table>
+<input type = "submit" value = "Update">
+<input type = "reset" value = "cancel">
+<br>
+
+</form>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

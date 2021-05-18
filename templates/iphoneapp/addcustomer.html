@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Customer Registration</title>
+<body>
+{% include 'iphoneapp/header.html' %}
+<form action="addcust" method="POST" align="center">
+{% csrf_token %}
+<h1><caption>Customer Registration</caption></h1>
+<table align="center">
+
+<tr>
+<td>Name:</td>
+<td><input type="text" name="custname"></td>
+</tr>
+
+<tr>
+<td>Email:</td>
+<td><input type="text" name="custemail"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="password" name="custpassword"></td>
+</tr>
+
+<tr>
+<td>Contact:</td>
+<td><input type="text" name="custcontact"></td>
+</tr>
+
+</table>
+<br>
+<input type = "submit" value = "submit">
+<input type = "reset" value = "cancel">
+
+</form>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

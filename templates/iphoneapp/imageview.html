@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>Image View</title>
+<body>
+{% include 'iphoneapp/header.html' %}
+<form align="center" action="upimage" method="POST">
+
+<img src="{{ e.imagefile.url }}" width="500" height="500"/>
+
+</form>
+
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

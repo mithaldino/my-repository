@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Update Store</title>
+<body>
+{% include 'iphoneapp/header.html' %}
+<form action="upstore" method="POST" align="center" enctype="multipart/form-data">
+{% csrf_token %}
+
+<h1><center><caption>Update Store</caption></center></h1>
+
+<table align="center">
+
+<tr>
+<td>Item ID</td>
+<td><input type="text" name="storeid" value='{{e.storeid}}'></td>
+</tr>
+
+<tr>
+<td><label for="category">Item Category</label></td>
+<td><select name="category" id="category" value='{{e.category}}'>
+<option value="Phone">Phone</option>
+<option value="MacBook">MacBook</option>
+<option value="Air Pods">Air Pods</option>
+<option value="Watch">Watch</option>
+<option value="iPad">iPad</option>
+</select></td>
+</tr>
+
+<tr>
+<td>Item Name</td>
+<td><input type="text" name="name" value='{{e.name}}'></td>
+</tr>
+
+<tr>
+<td>Item Price</td>
+<td><input type="text" name="price" value='{{e.price}}'></td>
+</tr>
+
+<tr>
+{{ form.as_p }}
+<td>Item Image</td>
+<td><input type="file" name="imagefile"></td>
+</tr>
+
+</table>
+<br>
+<input type = "submit" value = "Update Item">
+<td><input type="reset" name="Cancel"></td>
+<br>
+
+</form>
+
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>

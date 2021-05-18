@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+{% include 'iphoneapp/header.html' %}
+<br><br><br>
+<form action="admlog" method="POST">
+{% csrf_token %}
+
+<table align='center'>
+<tr>
+<td>Admin Email ID</td>
+<td><input type="text" name="adminid" id="email"></td>
+</tr>
+<tr>
+<td>Admin Password</td>
+<td><input type="password" name="adminpassword" id="check"></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Login"></td>
+<td><input type="reset" value="Cancel"></td>
+</tr>
+</table>
+</form>
+<br><br>
+{% include 'iphoneapp/footer.html' %}
+</body>
+</html>
